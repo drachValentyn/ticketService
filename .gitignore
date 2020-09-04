@@ -1,0 +1,49 @@
+#---------------------------------------#
+# Project Ignores                       #
+#---------------------------------------#
+
+# output
+/.temp
+/.tmp
+/build
+/dist
+
+# dependencies
+/node_modules
+.package.swp
+
+
+# JetBrains IDEs
+/.idea
+
+#---------------------------------------#
+# OSX Ignores                           #
+#---------------------------------------#
+
+.DS_Store
+.AppleDouble
+.LSOverride
+.localized
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+#---------------------------------------#
+# Windows Ignores                       #
+#---------------------------------------#
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
