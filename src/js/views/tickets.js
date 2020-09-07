@@ -1,8 +1,8 @@
-import currencyUI from './currency';
+import currencyUI from "./currency";
 
 class TicketsUI {
   constructor(currency) {
-    this.container = document.querySelector('.tickets-sections .row');
+    this.container = document.querySelector(".tickets-sections .row");
     this.getCurrencySymbol = currency.getCurrencySymbol.bind(currency);
   }
 
@@ -14,24 +14,25 @@ class TicketsUI {
       return;
     }
 
-    let fragment = '';
+    let fragment = "";
     const currency = this.getCurrencySymbol();
 
-    tickets.forEach((ticket) => {
-      const template = TicketsUI.ticketTemplate(ticket, currency);
+    tickets.forEach((ticket, index) => {
+      const template = TicketsUI.ticketTemplate(ticket, index, currency);
+      console.log(template);
       fragment += template;
     });
-
-    this.container.insertAdjacentHTML('afterbegin', fragment);
+console.log(fragment);
+    this.container.insertAdjacentHTML("afterbegin", fragment);
   }
 
   clearContainer() {
-    this.container.innerHTML = '';
+    this.container.innerHTML = "";
   }
 
   showEmptyMsg() {
     const template = TicketsUI.emptyMsgTemplate();
-    this.container.insertAdjacentHTML('afterbegin', template);
+    this.container.insertAdjacentHTML("afterbegin", template);
   }
 
   static emptyMsgTemplate() {
@@ -42,19 +43,21 @@ class TicketsUI {
     `;
   }
 
-  static ticketTemplate(ticket, currency) {
+  static ticketTemplate(ticket, index, currency) {
     return `
     <div class="col s12 m6">
       <div class="card ticket-card">
         <div class="ticket-airline d-flex align-items-center">
           <img src="${ticket.airline_logo}" class="ticket-airline-img"/>
           <span class="ticket-airline-name">${ticket.airline_name}</span>
+          <a data-id="${index}" class="add-to-fav btn-floating btn-large waves-effect waves-light green darken-3 btn-small">+</a>
         </div>
         <div class="ticket-destination d-flex align-items-center">
           <div class="d-flex align-items-center mr-auto">
             <span class="ticket-city">${ticket.origin_name}</span>
             <i class="medium material-icons">flight_takeoff</i>
           </div>
+          
           <div class="d-flex align-items-center">
             <i class="medium material-icons">flight_land</i>
             <span class="ticket-city">${ticket.destination_name}</span>

@@ -35,14 +35,13 @@
   margin-right: auto;
 }
 
-
 /* Header style */
 
 .form-section .input-field input:focus + label {
   color: #7b1fa2;
 }
 /* label underline focus color */
-.form-section .input-field input[type='text']:focus {
+.form-section .input-field input[type="text"]:focus {
   border-bottom: 1px solid #7b1fa2;
   box-shadow: 0 1px 0 0 #7b1fa2;
 }
@@ -112,6 +111,10 @@
 
 .ticket-card {
   padding: 10px 15px;
+}
+
+.ticket-airline {
+  justify-content: space-between;
 }
 
 .ticket-airline-name {
@@ -209,5 +212,9 @@
 }
 
 .header .favorites {
-    margin-left: 20px;
+  margin-left: 20px;
+}
+
+.add-to-fav {
+  font-size: 22px;
 }
