@@ -218,3 +218,7 @@
 .add-to-fav {
   font-size: 22px;
 }
+
+.fav-ticket{
+  background-color: red!important;
+}

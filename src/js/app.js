@@ -1,23 +1,32 @@
-import "../css/style.css";
-import "./plugins";
-import locations from "./store/locations";
-import formUI from "./views/form";
-import currencyUI from "./views/currency";
-import ticketsUI from "./views/tickets";
-import favorite from "./views/favorites";
+import '../css/style.css';
+import './plugins';
+import locations from './store/locations';
+import formUI from './views/form';
+import currencyUI from './views/currency';
+import ticketsUI from './views/tickets';
+import favorite from './views/favorites';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   initApp();
   const form = formUI.form;
 
   // Events
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     onFormSubmit();
   });
 
-  document.querySelector(".tickets-sections").addEventListener("click", (e) => {
-    if (e.target.classList.contains("add-to-fav")) {
+  document.querySelector('.tickets-sections').addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-to-fav')) {
+      favorite.toggleClass(e.target);
+      let id = e.target.dataset.id;
+      favorite.filterFavorite(id, locations.lastSearch);
+    }
+  });
+
+  document.querySelector('.favorite-item-info').addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-favorite')) {
+      favorite.toggleClass(e.target);
       let id = e.target.dataset.id;
       favorite.filterFavorite(id, locations.lastSearch);
     }
@@ -45,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currency,
     });
 
-    console.log(locations.lastSearch);
+    // console.log(locations.lastSearch);
 
     ticketsUI.renderTickets(locations.lastSearch);
   }

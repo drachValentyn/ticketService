@@ -1,24 +1,10 @@
-#---------------------------------------#
-# Project Ignores                       #
-#---------------------------------------#
-
-# output
-/.temp
-/.tmp
 /build
 /dist
 
 # dependencies
 /node_modules
 .package.swp
-
-
-# JetBrains IDEs
-/.idea
-
-#---------------------------------------#
-# OSX Ignores                           #
-#---------------------------------------#
+package-lock.json
 
 .DS_Store
 .AppleDouble
@@ -31,19 +17,3 @@
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-
-#---------------------------------------#
-# Windows Ignores                       #
-#---------------------------------------#
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db

@@ -1,22 +1,26 @@
-import currencyUI from "./currency";
+import currencyUI from './currency';
 
 class Favorites {
   constructor(currency) {
-    this.dropdown = document.getElementById("dropdown1");
+    this.dropdown = document.getElementById('dropdown1');
     this.getCurrencySymbol = currency.getCurrencySymbol.bind(currency);
   }
 
   filterFavorite(id, ticketList) {
     const currency = this.getCurrencySymbol();
 
-    let fragment = "";
-    let ticket = ticketList.filter((ticket, index) => index === Number(id));
+    let fragment = '';
+    ticketList.forEach((ticket, index) => {
+      if (index === Number(id)) {
+        fragment = Favorites.renderFavorite(ticket, currency);
+      }
+    });
 
-    let template = Favorites.renderFavorite(ticket, currency);
+    this.dropdown.insertAdjacentHTML('afterbegin', fragment);
+  }
 
-    console.log(template);
-
-    this.dropdown.insertAdjacentElement("afterbegin", template);
+  toggleClass(item) {
+    item.classList.toggle('fav-ticket');
   }
 
   static renderFavorite(ticket, currency) {
@@ -42,9 +46,9 @@ class Favorites {
             <span class="ticket-transfers">Пересадок: ${ticket.transfers}</span>
             <span class="ticket-flight-number">Номер рейса: ${ticket.flight_number}</span>
           </div>
-          <a class="waves-effect waves-light btn-small pink darken-3 delete-favorite ml-auto"
-            >Delete</a
-          >
+          <a class="waves-effect waves-light btn-small pink darken-3 delete-favorite ml-auto">
+            Delete
+          </a>
         </div>
       </div>
     `;

@@ -19,10 +19,8 @@ class TicketsUI {
 
     tickets.forEach((ticket, index) => {
       const template = TicketsUI.ticketTemplate(ticket, index, currency);
-      console.log(template);
       fragment += template;
     });
-console.log(fragment);
     this.container.insertAdjacentHTML("afterbegin", fragment);
   }
 
