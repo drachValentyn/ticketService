@@ -1,5 +1,3 @@
-/build
-/dist
 
 # dependencies
 /node_modules
@@ -7,12 +5,6 @@
 package-lock.json
 
 .DS_Store
-.AppleDouble
-.LSOverride
-.localized
-
-# Thumbnails
-._*
 
 # Files that might appear on external disk
 .Spotlight-V100
