@@ -1,6 +1,7 @@
 # # Ticket Service (training project)
 
 Service for tickets booking on vanilla JS
+
 Deployed on [firebase] hosting
 
 ### Tech
