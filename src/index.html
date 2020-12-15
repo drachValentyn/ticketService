@@ -7,7 +7,11 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="https://viizair.com/wp-content/uploads/2019/09/favicon.png"/>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://viizair.com/wp-content/uploads/2019/09/favicon.png"
+    />
 
     <title>Avia Tickets</title>
   </head>
@@ -20,7 +24,6 @@
             <a href="#" class="brand-logo">Avia Tickets</a>
           </div>
           <div class="favorites">
-
             <!-- Dropdown Trigger -->
 
             <a
@@ -30,10 +33,9 @@
               >Favorites</a
             >
 
-
             <!-- Dropdown Structure -->
             <div id="dropdown1" class="dropdown-content">
-              <!-- <div class="favorite-item  d-flex align-items-start">
+              <div class="favorite-item d-flex align-items-start">
                 <img
                   src="http://pics.avs.io/200/200/PS.png"
                   class="favorite-item-airline-img"
@@ -64,9 +66,9 @@
                     >Delete</a
                   >
                 </div>
-              </div> -->
+              </div>
               <!-- /favorite item -->
-              <!-- <div class="favorite-item  d-flex align-items-start">
+              <div class="favorite-item d-flex align-items-start">
                 <img
                   src="http://pics.avs.io/200/200/PS.png"
                   class="favorite-item-airline-img"
@@ -97,15 +99,17 @@
                     >Delete</a
                   >
                 </div>
-              </div> -->
+              </div>
               <!-- /favorite item -->
             </div>
           </div>
 
-
           <ul id="nav-mobile" class="right hide-on-med-and-down ml-auto">
             <li>
-              <div class="input-field currency-select">
+              <div
+                class="input-field currency-select"
+                data-hook="currencySelect"
+              >
                 <select id="currency">
                   <option value="USD">$ US Dollar</option>
                   <option value="EUR">€ Euro</option>
@@ -116,13 +120,13 @@
         </div>
       </div>
     </nav>
-    
+
     <div class="form-section">
       <div class="container">
         <div class="row d-flex">
           <div class="col s12 m6 mx-auto">
             <div class="card">
-              <form name="locationControls">
+              <form name="locationControls" data-hook="mainForm">
                 <div class="card-content d-flex flex-column">
                   <span class="card-title">Search Tickets</span>
                   <div class="input-field col s12">
@@ -130,6 +134,7 @@
                       type="text"
                       id="autocomplete-origin"
                       class="autocomplete"
+                      data-hook="autocompleteOrigin"
                     />
                     <label for="autocomplete-origin">Origin</label>
                   </div>
@@ -138,14 +143,19 @@
                       type="text"
                       id="autocomplete-destination"
                       class="autocomplete"
+                      data-hook="autocompleteDestination"
                     />
                     <label for="autocomplete-destination">Destination</label>
                   </div>
-                  <div class="input-field col s12">
+                  <div
+                    class="input-field col s12"
+                    data-hook="datepickerDepartWrap"
+                  >
                     <input
                       type="text"
                       class="datepicker"
                       id="datepicker-depart"
+                      data-hook="datepickerDepartInput"
                     />
                     <label for="datepicker-depart">Depart date </label>
                   </div>
@@ -183,7 +193,7 @@
       </div>
     </div>
 
-<div class="tickets-sections">
+    <div class="tickets-sections">
       <div class="container">
         <div class="row">
           <!-- <div class="tickets-empty-res-msg">
@@ -224,6 +234,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>

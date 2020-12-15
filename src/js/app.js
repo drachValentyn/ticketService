@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = formUI.form;
 
   // Events
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     onFormSubmit();
